@@ -7,8 +7,6 @@ node('nodejs8') {
     ls -l
     npm install -d
     $(npm bin)/ng build --prod --build-optimizer
-    oc whoami
-    oc login -u=developer -p=developer
-    oc status
+    oc start-build angular-5-example --from-dir=dist
   '''
 }
