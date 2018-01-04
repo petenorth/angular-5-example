@@ -1,22 +1,7 @@
-pipeline {
-  agent { label 'nodejs8' }
-  options {
-    skipDefaultCheckout()
-    disableConcurrentBuilds()
-  }
-  stages {
-    stage ('Get Source Code') {
-      steps {
-        checkout scm
-      }
-    }
-    stage ('Build') {
-      steps {
-        sh '''
-          npm install -d
-          $(npm bin)/ng build --prod --build-optimizer
-        '''
-      }
-    }
-  }
+node('nodejs8') {
+  stage 'build'
+  sh '''
+    npm install -d
+    $(npm bin)/ng build --prod --build-optimizer
+  '''
 }
