@@ -1,4 +1,6 @@
 node('nodejs8') {
+  stage 'checkout'
+    checkout scm
   stage 'build'
   sh '''
     pwd
