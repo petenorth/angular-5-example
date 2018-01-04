@@ -1,0 +1,11 @@
+kind: "BuildConfig"
+apiVersion: "v1"
+metadata:
+  name: "angular-example-pipeline"
+spec:
+  source:
+    git:
+      uri: "https://github.com/petenorth/angular-5-example"
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: jenkins/Jenkinsfile
