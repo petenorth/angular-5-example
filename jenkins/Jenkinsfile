@@ -1,6 +1,8 @@
 node('nodejs8') {
   stage 'build'
   sh '''
+    pwd
+    ls -l
     npm install -d
     $(npm bin)/ng build --prod --build-optimizer
   '''
