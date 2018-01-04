@@ -1,4 +1,3 @@
-
 node('nodejs8') {
   stage 'build'
   openshiftBuild(buildConfig: 'nodejs-ex', showBuildLogs: 'true')
