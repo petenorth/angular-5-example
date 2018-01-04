@@ -7,5 +7,6 @@ node('nodejs8') {
     ls -l
     npm install -d
     $(npm bin)/ng build --prod --build-optimizer
+    oc status
   '''
 }
