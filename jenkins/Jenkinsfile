@@ -1,6 +1,22 @@
-node('nodejs8') {
-  stage 'build'
-  openshiftBuild(buildConfig: 'nodejs-ex', showBuildLogs: 'true')
-  stage 'deploy'
-  openshiftDeploy(deploymentConfig: 'nodejs-ex')
+pipeline {
+  agent { label 'nodejs8' }
+  options {
+    skipDefaultCheckout()
+    disableConcurrentBuilds()
+  }
+  stages {
+    stage ('Get Source Code') {
+      steps {
+        checkout scm
+      }
+    }
+    stage ('Build') {
+      steps {
+        sh '''
+          npm install -d
+          $(npm bin)/ng build --prod --build-optimizer
+        '''
+      }
+    }
+  }
 }
