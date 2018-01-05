@@ -52,7 +52,7 @@ The resulting image is available in docker hub
 
 https://hub.docker.com/r/petenorth/nodejs8-openshift-slave/
 
-This needs to needs to be setup as a kubernetes pod template. Navigate within Jenkins to '> Home > Manage Jenkins > Configure System' . Then right at the bottom there should be a button 'Add a new cloud', when pressed one of the options should Kubernetes Pod Template. Fill in the resulting fields in the same way as the existing maven and nodejs kubernetes pod templates apart from 
+This needs to needs to be setup as a kubernetes pod template. Navigate within Jenkins to '> Home > Manage Jenkins > Configure System' . Then right at the bottom there should be a button 'Add a new cloud', when pressed one of the options should be 'Kubernetes Pod Template'. Fill in the resulting fields in the same way as the existing maven and nodejs kubernetes pod templates apart from 
 
 * 'name' should be nodejs8
 * 'label' should be nodejs8
@@ -62,9 +62,7 @@ You then need to add the container definition (click on the 'Add Container')
 * 'Docker Image' should be docker.io/petenorth/nodejs8-openshift-slave
 * fill in everything else identically to the maven and nodejs container fields.
 
-Finally click on 'Advanced ...' of the Kubernetes Pod Template (not the container advanced options) and make sure the Service Account is set to jenkins . 
-
-You then need to add the container definition (click on the 'Add Container')
+Finally click on 'Advanced ...' button of the Kubernetes Pod Template (not the container advanced options) and make sure the Service Account is set to jenkins . 
 
 ### Create binary build configuration 
 
@@ -72,7 +70,7 @@ We now need a binary build configuration to build the Nginx based image containe
 
     oc new-build .
     
-NOTE the first build will fail because it is a binary build and binary input has been provided.
+NOTE the first build will fail because it is a binary build and binary input hasn't been provided.
 
 ### Start the pipeline
 
