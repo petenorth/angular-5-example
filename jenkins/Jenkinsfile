@@ -7,7 +7,7 @@ node('nodejs8') {
     ls -l
     npm install -d
     npm install --save classlist.js
-    $(npm bin)/ng build
+    $(npm bin)/ng build --prod --build-optimizer
     oc start-build angular-5-example --from-dir=. --follow
   '''
 }
