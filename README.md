@@ -88,13 +88,4 @@ Then access the application via the resulting route. It should display a welcome
 
 ## TODO
 
-* change to `ng build` rather than `ng build --prod --build-optimizer` so that the performance characteristics can be shown tag, then add back tag, etc. DONE
-* add healthchecks.
-* remove node_modules from binary upload thus improving build times and network utilization.
-* use alternative approach of source to image with nodejs8 builder image 
-* specify the uid in the Dockerfile to remove warning from oc create-app
-* demonstrate base href
-* add deployment step in pipeline
-* create declarative pipeline version and upgrade pipeline plugin version in OCP.
-* remove warnings to with deprecated pipeline elements
-* find out why timings in pipelines are zero!
+See project issues.
