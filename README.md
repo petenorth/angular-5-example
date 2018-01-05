@@ -82,7 +82,7 @@ Now we are ready for our first build of the pipeline
 
 The pipeline as it stand only builds an image, it does not deploy etc. We create the application via a resource definition
 
-  oc create -f application.yml
+  oc create -f openshift/application.yml
 
 Then access the application via the resulting route. It should display a welcome page with the Angular logo.
 
