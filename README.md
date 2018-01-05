@@ -94,3 +94,4 @@ Then access the application via the resulting route. It should display a welcome
 * add healthchecks.
 * remove node_modules from binary upload thus improving build times and network utilization.
 * use alternative approach of source to image with nodejs8 builder image 
+* specify the uid in the Dockerfile to remove warning from oc create-app
