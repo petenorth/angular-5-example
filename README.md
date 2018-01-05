@@ -80,7 +80,7 @@ Now we are ready for our first build of the pipeline
 
     oc start-build angular-example-pipeline
     
-### Creste application
+### Create application
 
 The pipeline as it stand only builds an image, it does not deploy etc. We create the application via a resource definition
 
@@ -90,8 +90,9 @@ Then access the application via the resulting route. It should display a welcome
 
 ## TODO
 
-* create a branch which does only `ng build` rather than `ng build --prod --build-optimizer` so that the performance characteristics can be shown.
+* change to `ng build` rather than `ng build --prod --build-optimizer` so that the performance characteristics can be shown tag, then add back tag, etc.
 * add healthchecks.
 * remove node_modules from binary upload thus improving build times and network utilization.
 * use alternative approach of source to image with nodejs8 builder image 
 * specify the uid in the Dockerfile to remove warning from oc create-app
+* demonstrate base href
