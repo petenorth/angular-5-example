@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: image-build
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: angular-5-example-nginx:latest
+  source:
+    type: Dockerfile
+    dockerfile: |-
+      FROM nginx-112-rhel7:latest
+      COPY dist TODO
+      COPY nginx TODO
+    images:
+    - from: 
+        kind: ImageStreamTag
+        name: angular-5-example-s2i:latest
+      paths: 
+      - sourcePath: /opt/app-root/src/dist
+        destinationDir: "dist"
+      - sourcePath: /opt/app-root/src/nginx
+        destinationDir: "nginx
+  strategy:
+    dockerStrategy:
+      from: 
+        kind: ImageStreamTag
+        name: nginx-112-rhel7:latest
+    type: Docker
+  triggers:
+  - imageChange: {}
+    type: ImageChange
