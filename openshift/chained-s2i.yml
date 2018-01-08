@@ -11,7 +11,7 @@ spec:
     type: Dockerfile
     dockerfile: |-
       FROM nginx-112-rhel7:latest
-      COPY nginx/ ${NGINX_CONFIGURATION_PATH}
+      COPY nginx/ /opt/app-root/etc/nginx.d
       COPY dist/ ./
     images:
     - from: 
