@@ -11,8 +11,8 @@ spec:
     type: Dockerfile
     dockerfile: |-
       FROM nginx-112-rhel7:latest
-      COPY dist TODO
-      COPY nginx TODO
+      COPY nginx/ ${NGINX_CONFIGURATION_PATH}
+      COPY dist/ ./
     images:
     - from: 
         kind: ImageStreamTag
