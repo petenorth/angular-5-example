@@ -1,0 +1,17 @@
+#!/bin/bash
+echo "Before assembling"
+
+/usr/libexec/s2i/assemble
+rc=$?
+
+if [ $rc -eq 0 ]; then
+    echo "After successful assembling"
+    echo "Building ..."
+    npm install --save classlist.js
+    $(npm bin)/ng build --prod --build-optimizer
+    echo "After build."
+else
+    echo "After failed assembling"
+fi
+
+exit $rc
