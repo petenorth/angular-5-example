@@ -21,7 +21,7 @@ spec:
       - sourcePath: /opt/app-root/src/dist
         destinationDir: "dist"
       - sourcePath: /opt/app-root/src/nginx
-        destinationDir: "nginx
+        destinationDir: "nginx"
   strategy:
     dockerStrategy:
       from: 
