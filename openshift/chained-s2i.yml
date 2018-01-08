@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: BuildConfig
 metadata:
-  name: image-build
+  name: angular-5-example-chained-s2i
 spec:
   output:
     to:
