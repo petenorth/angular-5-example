@@ -45,7 +45,7 @@ Create the Jenkins pipeline definition in Openshift
 
     oc create -f openshift/pipeline.yml
     
-This will trigger the deployment of a Jenkins instance, wait until the resulting Jenkins pod is ready. Then access Jenkins via web browser using the URL of the route. The `ng build` command requires nodejs 6.9 or this means that we cannot use the default nodejs Jenkins slave provided with Openshift. 
+This will trigger the deployment of a Jenkins instance, wait until the resulting Jenkins pod is ready. Then access Jenkins via web browser using the URL of the route. The `ng build` command requires nodejs 6.9 or higher, this means that we cannot use the default nodejs Jenkins slave provided with Openshift. 
 
 ### Add NodeJS 8 Jenkins slave
 
