@@ -67,7 +67,7 @@ You then need to add the container definition (click on the 'Add Container')
 * 'Docker Image' should be docker.io/petenorth/nodejs8-openshift-slave
 * fill in everything else identically to the maven and nodejs container fields.
 
-Finally click on 'Advanced ...' button of the Kubernetes Pod Template (not the container advanced options) and make sure the Service Account is set to jenkins . 
+Finally click on 'Advanced ...' button of the Kubernetes Pod Template (not the container advanced options) and **make sure the Service Account is set to jenkins** . 
 
 ### Create binary build configuration 
 
