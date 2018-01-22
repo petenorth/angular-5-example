@@ -5,7 +5,7 @@ node('nodejs8') {
   sh '''
     pwd
     ls -l
-    npm install -d
+    npm install -d -v
     npm install --save classlist.js
     $(npm bin)/ng build --prod --build-optimizer
     rm -rf node_modules
