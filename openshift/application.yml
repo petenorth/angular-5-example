@@ -60,6 +60,26 @@ items:
         containers:
         - image: 172.30.1.1:5000/myproject/angular-5-example@sha256:0918cca166df1ea48b27b0d86f5c385613e1aa1e619ef628e6c8b134a64d0b65
           imagePullPolicy: Always
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /status
+              port: 8081
+              scheme: HTTP
+            initialDelaySeconds: 100
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /status
+              port: 8081
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
           name: angular-5-example
           ports:
           - containerPort: 80
