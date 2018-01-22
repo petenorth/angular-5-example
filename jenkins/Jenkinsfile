@@ -1,15 +1,17 @@
 node('nodejs8') {
-  stage 'checkout'
+  stage ('checkout') {
     checkout scm
-  stage 'build'
-  sh '''
-    pwd
-    ls -l
-    npm install --verbose -d 
-    cat package-lock.json
-    npm install --save classlist.js
-    $(npm bin)/ng build --prod --build-optimizer
-    rm -rf node_modules
-    oc start-build angular-5-example --from-dir=. --follow
-  '''
+  }
+  stage ('build') {
+    sh '''
+      pwd
+      ls -l
+      npm install --verbose -d 
+      cat package-lock.json
+      npm install --save classlist.js
+      $(npm bin)/ng build --prod --build-optimizer
+      rm -rf node_modules
+      oc start-build angular-5-example --from-dir=. --follow
+    '''
+  }
 }
