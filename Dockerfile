@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhscl/nginx-112-rhel7
+FROM nginx:1.13.3-alpine
 
 ## Copy our nginx config
 COPY nginx/ /etc/nginx/conf.d/
