@@ -11,7 +11,7 @@ node('nodejs8') {
   stage ('test') {
     sh '''
       ls -l /opt/google/chrome/chrome-sandbox
-      $(npm bin)/ng test --single-run
+      $(npm bin)/ng test --single-run --browsers Chrome_no_sandbox
     '''
   }
   stage ('build') {
