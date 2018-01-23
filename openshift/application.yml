@@ -58,7 +58,7 @@ items:
           deploymentconfig: angular-5-example
       spec:
         containers:
-        - image: 172.30.1.1:5000/myproject/angular-5-example@sha256:0918cca166df1ea48b27b0d86f5c385613e1aa1e619ef628e6c8b134a64d0b65
+        - image: 172.30.1.1:5000/myproject/angular-5-example-rhel@sha256:0918cca166df1ea48b27b0d86f5c385613e1aa1e619ef628e6c8b134a64d0b65
           imagePullPolicy: Always
           livenessProbe:
             failureThreshold: 3
@@ -103,7 +103,7 @@ items:
         - angular-5-example
         from:
           kind: ImageStreamTag
-          name: angular-5-example:latest
+          name: angular-5-example-rhel:latest
           namespace: myproject
       type: ImageChange
   status:
