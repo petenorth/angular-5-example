@@ -1,7 +1,7 @@
 FROM nginx:1.13.3-alpine
 
 ## Copy our nginx config
-COPY nginx/ /opt/app-root/etc/nginx.default.d/
+#COPY nginx/ /opt/app-root/etc/nginx.default.d/
 
 ## Remove default nginx website
 #RUN rm -rf /usr/share/nginx/html/*
