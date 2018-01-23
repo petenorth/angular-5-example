@@ -67,7 +67,9 @@ You then need to add the container definition (click on the 'Add Container')
 * 'Docker Image' should be docker.io/petenorth/nodejs8-openshift-slave
 * fill in everything else identically to the maven and nodejs container fields.
 
-Finally click on 'Advanced ...' button of the Kubernetes Pod Template (not the container advanced options) and **make sure the Service Account is set to jenkins** . 
+Finally click on 'Advanced ...' button of the Kubernetes Pod Template (not the container advanced options) and **make sure the Service Account is set to jenkins** .
+
+OPTIONAL - You can speed up the `npm install -d` step by creating a persistent volume claim in Openshift and then adding it as a volume to the pod template in the Jenkins config, the volume should be mounted at `/home/jenkins/.npm` .
 
 ### Create binary build configuration 
 
