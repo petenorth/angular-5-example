@@ -7,6 +7,8 @@ NOTE - an alternative source to image based approach is also available (see READ
 * .s2i/bin/assemble
 * openshift/chained-s2i.yml
 
+NOTE - there is a RHEL based jenkins pipeline branch, the output of the `ng build --prod --build-optimizer` within the pipeline  (or rather the `./dist` folder) is passed as the context to a s2i image build which uses the `registry.access.redhat.com/rhscl/nginx-112-rhel7` builder image. The branch is called 'rhel'.
+
 ## Prerequisites
 
 ### Access to an Openshift 3.7 environment
