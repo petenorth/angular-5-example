@@ -10,7 +10,7 @@ node('nodejs8') {
   }
   stage ('test') {
     sh '''
-      ng test --single-run
+      $(npm bin)/ng test --single-run
     '''
   }
   stage ('build') {
