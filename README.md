@@ -1,11 +1,6 @@
-# Angular Example with Deployment to Openshift
+# Angular Example with Deployment to Openshift (RHEL based version)
 
-This project takes the output of ng create angular-example and adds the necessary software artifacts that enable a production grade deployment to Openshift. The container image deployed to Openshift is the output of the ng build command copied into a base Nginx image.
-
-NOTE - an alternative source to image based approach is also available (see README-s2i.md). The following files are ONLY used with the source to image approach:
-
-* .s2i/bin/assemble
-* openshift/chained-s2i.yml
+This project takes the output of ng create angular-example and adds the necessary software artifacts that enable a production grade deployment to Openshift. The container image deployed to Openshift is the output of the ng build command is passed as the context for a s2i build using the `registry.access.redhat.com/rhscl/nginx-112-rhel7` builder image.
 
 ## Prerequisites
 
