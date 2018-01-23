@@ -73,9 +73,9 @@ OPTIONAL - You can speed up the `npm install -d` step by creating a persistent v
 
 ### Create binary build configuration 
 
-We now need a binary build configuration to build the Nginx based image container that will serve the angular application
+We now need a s2i build configuration to build the Nginx based image container that will serve the angular application
 
-    oc new-build .
+    oc new-build . --docker-image=registry.access.redhat.com/rhscl/nginx-112-rhel7 --name=angular-5-example-rhel
     
 NOTE the first build will fail because it is a binary build and binary input hasn't been provided.
 
