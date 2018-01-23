@@ -10,6 +10,7 @@ node('nodejs8') {
   }
   stage ('test') {
     sh '''
+      ls -l /opt/google/chrome/chrome-sandbox
       $(npm bin)/ng test --single-run
     '''
   }
