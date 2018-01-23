@@ -2,6 +2,11 @@ node('nodejs8') {
   stage ('checkout') {
     checkout scm
   }
+  stage ('test') {
+    sh '''
+      ng test --single-run
+    '''
+  }
   stage ('build') {
     sh '''
       pwd
