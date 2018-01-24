@@ -12,6 +12,7 @@ node('nodejs8') {
     sh '''
       ls -l /opt/google/chrome/chrome-sandbox
       $(npm bin)/ng test --single-run --browsers Chrome_no_sandbox
+      junit 'test-results.xml'
     '''
   }
   stage ('build') {
