@@ -48,7 +48,7 @@ This will trigger the deployment of a Jenkins instance, wait until the resulting
 
 ### Add NodeJS 8 Jenkins slave
 
-To address this I have created a separate project I have created a nodejs 8 based slave image for use in Openshift
+To address this I have created a separate nodejs 8 based Jenkins slave image project
 
 https://github.com/petenorth/nodejs8-openshift-slave
 
