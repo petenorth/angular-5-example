@@ -18,6 +18,9 @@ node('nodejs8') {
   } finally {
     junit "test-results.xml"
   }
+  stage ('code quality'){
+    $(npm bin)/ng lint
+  }
   stage ('build') {
     sh '''
       $(npm bin)/ng build --prod --build-optimizer
