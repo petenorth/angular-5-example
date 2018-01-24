@@ -56,7 +56,7 @@ The resulting image is available in docker hub
 
 https://hub.docker.com/r/petenorth/nodejs8-openshift-slave/
 
-This needs to needs to be setup as a kubernetes pod template. Navigate within Jenkins to '> Home > Manage Jenkins > Configure System' . Then right at the bottom there should be a button 'Add a new cloud', when pressed one of the options should be 'Kubernetes Pod Template'. Fill in the resulting fields in the same way as the existing maven and nodejs kubernetes pod templates apart from 
+This needs to be setup as a kubernetes pod template. Navigate within Jenkins to '> Home > Manage Jenkins > Configure System' . Then right at the bottom there should be a button 'Add a new cloud', when pressed one of the options should be 'Kubernetes Pod Template'. Fill in the resulting fields in the same way as the existing maven and nodejs kubernetes pod templates apart from 
 
 * 'name' should be nodejs8
 * 'label' should be nodejs8
