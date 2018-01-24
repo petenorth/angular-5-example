@@ -19,12 +19,10 @@ node('nodejs8') {
     junit "test-results.xml"
   }
   stage ('code quality'){
-    $(npm bin)/ng lint
+    sh '$(npm bin)/ng lint'
   }
   stage ('build') {
-    sh '''
-      $(npm bin)/ng build --prod --build-optimizer
-    '''
+    sh '$(npm bin)/ng build --prod --build-optimizer'
   }
   stage ('build image') {
     sh '''
