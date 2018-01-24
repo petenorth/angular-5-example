@@ -1,6 +1,10 @@
 # Angular Example with Deployment to Openshift (RHEL based version)
 
-This project takes the output of ng create angular-example and adds the necessary software artifacts that enable a production grade deployment to Openshift. The container image deployed to Openshift is the output of the ng build command is passed as the context for a s2i build using the `registry.access.redhat.com/rhscl/nginx-112-rhel7` builder image.
+This project takes the output of ng create angular-example and adds the necessary software artifacts that enable a production grade deployment to Openshift. The container image deployed to Openshift is the output of the ng build command passed as the context for a s2i build using the `registry.access.redhat.com/rhscl/nginx-112-rhel7` builder image. 
+
+The build process is defined via a Jenkins pipeline definition. This pipeline definition has separate stages for checkout, test, lint, build and the final image build. All of these stages apart from the final image build stage are executed within the slave image (described later).
+
+The Jenkins server runs as a container within Openshift see https://docs.openshift.com/container-platform/3.7/using_images/other_images/jenkins.html .
 
 ## Prerequisites
 
