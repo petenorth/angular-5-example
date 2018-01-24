@@ -8,12 +8,15 @@ node('nodejs8') {
       npm install --save classlist.js
     '''
   }
-  stage ('test') {
-    sh '''
-      ls -l /opt/google/chrome/chrome-sandbox
-      $(npm bin)/ng test --single-run --browsers Chrome_no_sandbox
-      junit 'test-results.xml'
-    '''
+  try{
+    stage ('test') {
+      sh '''
+        ls -l /opt/google/chrome/chrome-sandbox
+        $(npm bin)/ng test --single-run --browsers Chrome_no_sandbox
+      '''
+    }
+  } finally {
+    junit "test-results.xml"
   }
   stage ('build') {
     sh '''
