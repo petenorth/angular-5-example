@@ -52,7 +52,7 @@ To address this I have created a separate nodejs 8 based Jenkins slave image pro
 
 https://github.com/petenorth/nodejs8-openshift-slave
 
-This slave image also includes Google Chrome, this allows the `ng test` CLI goal (which requires Google Chrome) to be run. The resulting image is available in docker hub
+This slave image also includes Google Chrome which allows the `ng test` CLI goal (which requires Google Chrome) to be run. The resulting image is available in docker hub
 
 https://hub.docker.com/r/petenorth/nodejs8-openshift-slave/
 
