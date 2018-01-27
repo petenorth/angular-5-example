@@ -4,10 +4,10 @@ Angular 5 Example deployed to Webpack Dev Server
 The Angular CLI command `ng serve` is the entry point to running Angular 5 applications for most developers. Behind the scenes this
 starts a Webpack Dev Server instance which is a nodejs web server application. 
 
-It is not intended to be used in production environments see
+It is not intended to be used in production environments:
 
-https://angular.io/guide/deployment#build-vs-serve
-https://github.com/angular/angular-cli/issues/5274
+* https://angular.io/guide/deployment#build-vs-serve
+* https://github.com/angular/angular-cli/issues/5274
 
 The purpose of this read me is to describe how to deploy the app to Openshift in way which matches how a developer runs their Angular 5 application.
 This then will allow the reader to compare and contrast start up behaviour of the web server and the performance characteristics within the browser 
