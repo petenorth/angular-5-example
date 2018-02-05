@@ -55,11 +55,11 @@ Add the JUnit Plugin to your Jenkins instance via Manage Jenkins -> Manage Plugi
 
 ### Add NodeJS 8 Jenkins slave
 
-To address this I have created a separate project I have created a nodejs 8 based slave image for use in Openshift
+To address this I have created a separate nodejs 8 based Jenkins slave image project
 
 https://github.com/petenorth/nodejs8-openshift-slave
 
-The resulting image is available in docker hub
+This slave image also includes Google Chrome which allows the ng test CLI goal (which requires Google Chrome) to be run. The resulting image is available in docker hub
 
 https://hub.docker.com/r/petenorth/nodejs8-openshift-slave/
 
