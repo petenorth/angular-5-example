@@ -2,15 +2,33 @@ node('nodejs8') {
   stage ('checkout') {
     checkout scm
   }
-  stage ('build') {
+  stage ('install modules'){
     sh '''
-      pwd
-      ls -l
       npm install --verbose -d 
       npm install --save classlist.js
-      $(npm bin)/ng build --prod --build-optimizer
+    '''
+  }
+  try{
+    stage ('test') {
+      sh '''
+        ls -l /opt/google/chrome/chrome-sandbox
+        $(npm bin)/ng test --single-run --browsers Chrome_no_sandbox
+      '''
+    }
+  } finally {
+    junit "test-results.xml"
+  }
+  stage ('code quality'){
+    sh '$(npm bin)/ng lint'
+  }
+  stage ('build') {
+    sh '$(npm bin)/ng build --prod --build-optimizer'
+  }
+  stage ('build image') {
+    sh '''
       rm -rf node_modules
       oc start-build angular-5-example --from-dir=. --follow
     '''
   }
 }
+
