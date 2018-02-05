@@ -2,6 +2,8 @@
 
 This project takes the output of ng create angular-example and adds the necessary software artifacts that enable a production grade deployment to Openshift. The container image deployed to Openshift is the output of the ng build command copied into a base Nginx image.
 
+The build process is defined via a Jenkins pipeline definition. This pipeline definition has separate stages for checkout, test, lint, build and the final image build. All of these stages apart from the final image build stage are executed within the slave image (described later).
+
 NOTE - an alternative source to image based approach is also available (see README-s2i.md). The following files are ONLY used with the source to image approach:
 
 * .s2i/bin/assemble
