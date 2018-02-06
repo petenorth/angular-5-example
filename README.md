@@ -26,6 +26,11 @@ IMPORTANT - the minishift instance must be started using version 3.7 (the defaul
      tar -zxvf oc.tar.gz
      cp oc ~/.minishift/cache/oc/v3.6.173.0.21
      minishift start --ocp-tag v3.7.9
+     oc login -u system:admin
+     oc tag --source=docker openshift3/jenkins-2-rhel7:v3.7 openshift/jenkins:2
+     oc login -u developer -p developer
+     
+The tag command ensures that the 3.7 version of the Openshift Jenkins image is used rather than one tagged latest (which can be a v3.6 image if a bug has been fixed in the 3.6 image for instance). The v3.7 version of the Jenkins image has a version of the pipeline plugin which supports the declarative syntax, v3.6 does not .
      
 ### Angular CLI (only if further development of the application will occur)
 
