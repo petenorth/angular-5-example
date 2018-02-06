@@ -16,7 +16,9 @@ pipeline{
     }
     stage ('test'){
       steps{
-        sh '$(npm bin)/ng test --single-run --browsers Chrome_no_sandbox'
+        sh '''
+          $(npm bin)/ng test --single-run --browsers Chrome_no_sandbox
+        '''
       }
       post {
           always {
@@ -25,17 +27,22 @@ pipeline{
       }
     }
     stage ('code quality'){
-      sh '$(npm bin)/ng lint'
+      steps{
+        sh '$(npm bin)/ng lint'
+      }
     }
     stage ('build') {
-      sh '$(npm bin)/ng build --prod --build-optimizer'
+      steps{
+        sh '$(npm bin)/ng build --prod --build-optimizer'
+      }
     }
     stage ('build image') {
-      sh '''
-        rm -rf node_modules
-        oc start-build angular-5-example --from-dir=. --follow
-      '''
+      steps{
+        sh '''
+          rm -rf node_modules
+          oc start-build angular-5-example --from-dir=. --follow
+        '''
+      }
     }
   }
 }
-
