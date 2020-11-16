@@ -13,6 +13,8 @@ NOTE - there is a RHEL based jenkins pipeline branch, the output of the `ng buil
 
 ## Prerequisites
 
+
+
 ### Access to an Openshift 3.7 environment
 
 Locally this is easiest to achieve using Minishift
