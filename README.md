@@ -14,7 +14,6 @@ NOTE - there is a RHEL based jenkins pipeline branch, the output of the `ng buil
 ## Prerequisites
 
 
-
 ### Access to an Openshift 3.7 environment
 
 Locally this is easiest to achieve using Minishift
@@ -22,6 +21,7 @@ Locally this is easiest to achieve using Minishift
 https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/3.2/html/getting_started_guide/
 
 IMPORTANT - the minishift instance must be started using version 3.7 (the default is 3.6) of the Openshift Container Platform i.e. the commands that I used were
+
 
      minishift setup-cdk
      curl -O https://mirror.openshift.com/pub/openshift-v3/clients/3.7.9/linux/oc.tar.gz
